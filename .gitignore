@@ -1,0 +1,18 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules/
+1-getting-started
+2-advanced-examples
+screenshots
+
+
+# Ignore log and temp files
+*.log
+*.tmp
+package-lock.json
+
+# Ignore specific folders in e2e
+cypress/e2e/1-getting-started/
+cypress/e2e/2-advanced-examples/
