@@ -13,7 +13,6 @@ describe("ClickUp Spaces and Tasks E2E", () => {
     const newSpaceDescription = "New description for project #777";
 
     cy.contains("Create new Space", { timeout: 15000 }).should("be.visible");
-    cy.contains(`Don't show me this again`).click()
 
     spacesPage.createNewSpaceButton.click();
     spacesPage.newSpaceNameInput.type(newSpaceTitle);
