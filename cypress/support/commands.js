@@ -7,6 +7,11 @@ Cypress.on('window:before:load', (win) => {
   delete win.Cypress;
 });
 
+// TODO: Integrate and test clickWhileVisible with the rest of the codebase.
+// This command is not yet used or finalized.
+// en example of use for the 'login' command:
+// cy.clickWhileVisible('button:contains("Log In")');
+// cy.url().should('contain',teamId)
 Cypress.Commands.add('clickWhileVisible', (selector, maxAttempts = 50, delay = 3000) => {
   let attempts = 0;
 
@@ -37,10 +42,6 @@ Cypress.Commands.add('login', () => {
   loginPage.loginButton.click();
   cy.wait(2000)
   cy.contains('button', 'Log In').should('be.visible').click();
-  // cy.clickWhileVisible('button:contains("Log In")');
-  // cy.url().should('contain',teamId)
-  
-
 });
 
 Cypress.Commands.add("apiCreateSpace", (spaceName = "Test Space #12234", listName = "Test List #5678") => {
