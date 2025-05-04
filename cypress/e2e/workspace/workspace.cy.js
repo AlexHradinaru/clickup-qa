@@ -13,6 +13,7 @@ describe("ClickUp Spaces and Tasks E2E", () => {
     const newSpaceDescription = "New description for project #777";
 
     cy.contains("Create new Space", { timeout: 15000 }).should("be.visible");
+    cy.contains(`Don't show me this again`).click()
 
     spacesPage.createNewSpaceButton.click();
     spacesPage.newSpaceNameInput.type(newSpaceTitle);
@@ -87,14 +88,12 @@ describe("ClickUp Spaces and Tasks E2E", () => {
   it("creates a space via API and deletes it via UI", () => {
     cy.apiCreateSpace().then(() => {
       spacesPage.listHeaderArea.should("be.visible", { timeout: 10000 });
-      cy.contains(`Don't show me this again`).click()
 
       spacesPage.spaceNameSideBarButton
         .should("be.visible", { timeout: 10000 })
         .click();
-        cy.contains(`Don't show me this again`).click()
       spacesPage.overviewRecentArea.should("be.visible", { timeout: 10000 });
-
+      
 
       spacesPage.spaceNameSettingsButton
         .should("be.visible", { timeout: 10000 })
