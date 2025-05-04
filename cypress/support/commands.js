@@ -40,8 +40,9 @@ Cypress.Commands.add('login', () => {
   loginPage.emailInput.type(email);
   loginPage.passwordInput.type(password);
   loginPage.loginButton.click();
-  cy.wait(2000)
-  cy.contains('button', 'Log In').should('be.visible').click();
+
+  cy.clickWhileVisible('button:contains("Log In")');
+  cy.url().should('contain',teamId)
 });
 
 Cypress.Commands.add("apiCreateSpace", (spaceName = "Test Space #12234", listName = "Test List #5678") => {
