@@ -33,7 +33,7 @@ jobs:
           CYPRESS_email: ${{ secrets.CYPRESS_EMAIL }}
           CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
           CYPRESS_API: ${{ secrets.CYPRESS_API }}
-          CYPRESS_teamId: ${{ secrets.CYPRESS_teamId }}
+          CYPRESS_teamId: ${{ secrets.CYPRESS_TEAMID }}
         run: npx cypress run
 
       - name: Upload Cypress screenshots
