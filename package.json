@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "cypress": "^14.3.2"
+    "cypress": "^14.3.2",
+    "cypress-dotenv": "^3.0.1"
   }
 }

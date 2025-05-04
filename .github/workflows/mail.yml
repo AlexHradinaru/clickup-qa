@@ -1,21 +1,50 @@
-name: E2E on Chrome
+name: Cypress E2E Tests
+
 on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to test'
-        required: false
+  push:
+    branches: [main]
   pull_request:
-    types: [opened, reopened, edited, synchronize]
+    branches: [main]
+
 jobs:
-  Cypress-Run:
+  cypress-run:
     runs-on: ubuntu-latest
-    name: E2E on Chrome
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Cypress run
-        uses: cypress-io/github-action@v6.6.1
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          browser: chrome
-          working-directory: ./clickup-qa
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create .env file from GitHub Secrets
+        run: |
+          echo "CYPRESS_email=${{ secrets.CYPRESS_EMAIL }}" >> .env
+          echo "CYPRESS_password=${{ secrets.CYPRESS_PASSWORD }}" >> .env
+          echo "CYPRESS_API=${{ secrets.CYPRESS_API }}" >> .env
+
+      - name: Run Cypress tests
+        env:
+          CYPRESS_email: ${{ secrets.CYPRESS_EMAIL }}
+          CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_API: ${{ secrets.CYPRESS_API }}
+        run: npx cypress run
+
+      - name: Upload Cypress screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload Cypress videos
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
