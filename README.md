@@ -1,9 +1,9 @@
 # ClickUp QA Automation Suite
 
 [[Watch the video]](https://youtu.be/SQZJPT9bs6c)  
-![Screenshot of passed tests](assets/screenshot1.png)  
-![Screenshot of passed tests in headless mode](assets/screenshot2.png)  
-![Screenshot of a successful login notification sent to email](assets/screenshot3.png)
+![Screenshot of passed tests](assets/Screenshot1.png)  
+![Screenshot of passed tests in headless mode](assets/Screenshot2.png)  
+![Screenshot of a successful login notification sent to email](assets/Screenshot3.png)
 
 ## Overview
 This project is an advanced Cypress-based end-to-end (E2E) automation suite for ClickUp’s web application. It demonstrates best practices in test automation, including the Page Object Model, API/UI hybrid testing, custom Cypress commands, and secure environment variable management.
