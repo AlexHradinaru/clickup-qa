@@ -1,8 +1,13 @@
 # ClickUp QA Automation Suite
 
 [[Watch the video]](https://youtu.be/SQZJPT9bs6c)  
-![Screenshot of passed tests](assets/Screenshot1.png)  
+
+---
+Screenshot of passed tests:
+![Screenshot of passed tests](assets/Screenshot1.png)
+Screenshot of passed tests in headless mode
 ![Screenshot of passed tests in headless mode](assets/Screenshot2.png)  
+Screenshot of a successful login notification sent to email
 ![Screenshot of a successful login notification sent to email](assets/Screenshot3.png)
 
 ## Overview
