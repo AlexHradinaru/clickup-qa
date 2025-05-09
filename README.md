@@ -1,5 +1,7 @@
 # ClickUp QA Automation Suite
 
+[![Watch the video](https://img.youtube.com/vi/SQZJPT9bs6c/0.jpg)](https://youtu.be/SQZJPT9bs6c)
+
 ## Overview
 This project is an advanced Cypress-based end-to-end (E2E) automation suite for ClickUp’s web application. It demonstrates best practices in test automation, including the Page Object Model, API/UI hybrid testing, custom Cypress commands, and secure environment variable management.
 
@@ -76,6 +78,7 @@ CYPRESS_password=yourpassword
 CYPRESS_API=your_clickup_api_token
 CYPRESS_teamId=your_team_id
 ```
+It is highly recommended to use a newly created account or an account with no prior activity.
 
 ### 4. Run Tests Locally
 ```bash
